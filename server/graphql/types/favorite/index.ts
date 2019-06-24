@@ -1,8 +1,8 @@
-import { Favorite } from './favorite'
-import { NewFavorite } from './new-favorite'
-import { FavoritePatch } from './favorite-patch'
-import { FavoriteList } from './favorite-list'
 import { Filter, Pagination, Sorting } from '@things-factory/shell'
+import { Favorite } from './favorite'
+import { FavoriteList } from './favorite-list'
+import { FavoritePatch } from './favorite-patch'
+import { NewFavorite } from './new-favorite'
 
 export const Mutation = `
   createFavorite (
@@ -15,7 +15,8 @@ export const Mutation = `
   ): Favorite
 
   deleteFavorite (
-    id: String!
+    userId: String!
+    routing: String!
   ): Favorite
 
   publishFavorite (
