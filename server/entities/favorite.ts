@@ -9,7 +9,7 @@ import {
   PrimaryGeneratedColumn
 } from 'typeorm'
 import { Domain } from '@things-factory/shell'
-import { User } from '@things-factory/user-base'
+import { User } from '@things-factory/auth-base'
 
 @Entity('favorites')
 @Index('ix_favorite_0', (favorite: Favorite) => [favorite.domain, favorite.userId, favorite.routing], { unique: true })
