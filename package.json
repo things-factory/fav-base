@@ -26,5 +26,7 @@
     "@things-factory/auth-base": "*",
     "@things-factory/shell": "*"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@things-factory/tester": "*"
+  }
 }

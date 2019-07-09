@@ -1,9 +1,19 @@
-import { Entity, Index, Column, OneToMany, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
-import { Domain, DomainBaseEntity } from '@things-factory/shell'
+import {
+  CreateDateColumn,
+  UpdateDateColumn,
+  Entity,
+  Index,
+  Column,
+  OneToMany,
+  ManyToOne,
+  PrimaryGeneratedColumn
+} from 'typeorm'
+import { Domain } from '@things-factory/shell'
+import { User } from '@things-factory/user-base'
 
 @Entity('favorites')
 @Index('ix_favorite_0', (favorite: Favorite) => [favorite.domain, favorite.userId, favorite.routing], { unique: true })
-export class Favorite extends DomainBaseEntity {
+export class Favorite {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
@@ -15,4 +25,16 @@ export class Favorite extends DomainBaseEntity {
 
   @Column('text')
   routing: string
+
+  @CreateDateColumn()
+  createdAt: Date
+
+  @UpdateDateColumn()
+  updatedAt: Date
+
+  @ManyToOne(type => User)
+  creator: User
+
+  @ManyToOne(type => User)
+  updater: User
 }
