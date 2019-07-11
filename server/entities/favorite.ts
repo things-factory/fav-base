@@ -11,10 +11,10 @@ export class Favorite {
   @ManyToOne(type => Domain)
   domain: Domain
 
-  @Column('text')
+  @Column()
   userId: string
 
-  @Column('text')
+  @Column()
   routing: string
 
   @CreateDateColumn()
