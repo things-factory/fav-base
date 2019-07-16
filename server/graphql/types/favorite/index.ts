@@ -18,10 +18,6 @@ export const Mutation = `
     userId: String!
     routing: String!
   ): Favorite
-
-  publishFavorite (
-    id: String!
-  ): Favorite
 `
 
 export const Query = `
