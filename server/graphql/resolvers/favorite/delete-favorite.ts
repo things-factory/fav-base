@@ -6,7 +6,7 @@ export const deleteFavorite = {
     const repository = getRepository(Favorite)
 
     return await repository.delete({
-      domain: context.domain,
+      domain: context.state.domain,
       userId,
       routing
     })

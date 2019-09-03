@@ -8,7 +8,7 @@ export const createFavorite = {
     const repository = getRepository(Favorite)
     const newFavorite = {
       id: uuid(),
-      domain: context.domain,
+      domain: context.state.domain,
       userId: favorite.userId,
       routing: favorite.routing
     }

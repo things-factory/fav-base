@@ -7,7 +7,7 @@ export const myFavoritesResolver = {
     return await repository.find({
       where: {
         userId,
-        domain: context.domain
+        domain: context.state.domain
       }
     })
   }
